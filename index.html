@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monginis Aundh | Custom Cake</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="brand"><div class="logo">M</div><div><b>Monginis</b><small>Aundh • Custom Cake Orders</small></div></div>
+  <button class="settingsBtn" onclick="openSettings()">⚙️ Shop Settings</button>
+</header>
+
+<section class="hero">
+  <div>
+    <p class="tag">CUSTOM CAKE ORDER</p>
+    <h1>Create your <span>dream cake</span> 🎂</h1>
+    <p>Upload a cake reference picture, choose your requirements and get an estimated price.</p>
+    <button class="primary" onclick="document.getElementById('custom').scrollIntoView({behavior:'smooth'})">Customize Cake</button>
+  </div>
+  <div class="heroCake">🎂</div>
+</section>
+
+<main id="custom">
+  <div class="heading"><p class="tag">STEP BY STEP</p><h2>Customize your cake</h2></div>
+  <div class="card">
+    <form id="cakeForm">
+      <label>1. Upload your cake reference picture
+        <div class="upload" id="uploadBox">
+          <input type="file" id="cakeImage" accept="image/*">
+          <div id="uploadText">📷 <b>Click to upload</b><br><small>JPG, PNG or WEBP</small></div>
+          <img id="preview" alt="Cake preview">
+        </div>
+      </label>
+
+      <div class="grid">
+        <label>2. Weight
+          <select id="weight"></select>
+          <small class="hint">Custom cakes start from <b>1 kg</b>.</small>
+        </label>
+        <label>3. Flavour
+          <select id="flavour"></select>
+        </label>
+        <label>4. Filling
+          <select id="filling"></select>
+        </label>
+        <label>5. Cake type
+          <select id="cakeType"></select>
+        </label>
+      </div>
+
+      <label>6. Message on cake (optional)
+        <input id="message" placeholder="e.g. Happy Birthday Sima ❤️">
+      </label>
+      <label>7. Special instructions (optional)
+        <textarea id="notes" rows="3" placeholder="Any design or decoration request..."></textarea>
+      </label>
+
+      <div class="summary">
+        <div><span>Estimated price</span><strong id="price">₹0</strong></div>
+        <small>Final price can be confirmed by the shop after checking your uploaded design.</small>
+      </div>
+      <button class="primary full" type="submit">📲 Send Custom Cake Request on WhatsApp</button>
+    </form>
+  </div>
+</main>
+
+<div class="modal" id="settingsModal">
+  <div class="modalBox">
+    <button class="close" onclick="closeSettings()">×</button>
+    <p class="tag">SHOP ADMIN</p><h2>Shop Settings</h2>
+    <p class="notice">This prototype saves settings in this browser only. For shared online admin settings and permanent image uploads, a database/backend must be connected.</p>
+    <h3>Weight Prices</h3>
+    <div id="weightSettings"></div>
+    <h3>Flavours</h3>
+    <div id="flavourSettings"></div>
+    <h3>Fillings</h3>
+    <div id="fillingSettings"></div>
+    <h3>Cake Types</h3>
+    <div id="typeSettings"></div>
+    <button class="primary full" onclick="saveSettings()">Save Settings</button>
+  </div>
+</div>
+
+<footer>
+  <b>Monginis Aundh</b>
+  <p>Aundh, Niyoshi Park, Ward No. 8, Shalini Apartment, Shop No. 4</p>
+  <p>WhatsApp: +91 8888999942</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
